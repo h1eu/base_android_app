@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 
 typealias Inflate<T> =(LayoutInflater,ViewGroup?,Boolean) -> T
-abstract class BaseFragment<B: ViewBinding>(val inflate: Inflate<B>): Fragment() {
+abstract class BaseFragment<B: ViewBinding>(private val inflate: Inflate<B>): Fragment() {
     private lateinit var _binding: B
     protected val binding get() =_binding
 
